@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="20초 동안 낙하물을 피하는 짧은 브라우저 게임">
+  <title>궤도 탈출 · 20초 피하기</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="header"><span class="eyebrow">MINI GAME / 01</span><h1>궤도 탈출<span class="spark">✦</span></h1><p>20초만 버티면 탈출 성공.</p></header>
+    <section class="game" aria-label="궤도 탈출 게임">
+      <div class="status" aria-live="polite"><div><small>현재 상태</small><strong id="phase">대기</strong></div><div><small>남은 시간</small><strong id="time">20.0초</strong></div><div><small>충돌</small><strong id="hits">0 / 3</strong></div></div>
+      <div class="arena" id="arena" aria-label="다섯 칸 이동 구역"><div class="lanes" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div id="hazards" class="hazards" aria-hidden="true"></div><div id="player" class="player" aria-label="플레이어"></div><div id="overlay" class="overlay"><span class="overlay-mark">✦</span><h2 id="overlay-title">출발 준비</h2><p id="overlay-copy">좌우로 움직여 낙하물을 피하세요.</p><button id="start" class="primary" type="button">게임 시작 <span aria-hidden="true">↗</span></button></div></div>
+      <div class="controls"><button id="left" type="button" aria-label="왼쪽으로 한 칸 이동">← <span>왼쪽</span></button><p>키보드 <kbd>←</kbd> <kbd>→</kbd> 또는 <kbd>A</kbd> <kbd>D</kbd><br>버튼을 한 번 누르면 한 칸 이동</p><button id="right" type="button" aria-label="오른쪽으로 한 칸 이동"><span>오른쪽</span> →</button></div>
+    </section>
+    <section class="details"><div><span class="eyebrow">RULES</span><h2>딱 세 가지만 기억하세요.</h2><ol><li>시작을 눌러 20초 타이머를 켭니다.</li><li>좌우로 이동해 위에서 오는 조각을 피합니다.</li><li>20초 생존은 성공, 충돌 3번은 실패. 종료 후 다시 시작할 수 있습니다.</li></ol></div><aside><span class="eyebrow">OPTIONS & RECORD</span><label class="toggle"><input id="effects" type="checkbox" checked><span>화면 효과 켜기</span></label><p class="muted">반짝임과 충돌 흔들림만 바뀝니다. 게임 난이도에는 영향이 없습니다.</p><div class="record">완주 횟수 <strong id="wins">0</strong></div><button id="reset-record" class="text-button" type="button">기록 초기화</button><p id="storage-message" class="muted" role="status"></p></aside></section>
+    <footer>로그인 없이 플레이 · 기록은 이 브라우저에만 저장</footer>
+  </main>
+  <script type="module" src="./main.mjs"></script>
+</body>
+</html>
